@@ -1,0 +1,36 @@
+.input-container{
+    background-color: aqua;
+    height: 220px;
+    width: 300px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+    
+  
+}
+.main-div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+.title{
+    text-align: center;
+}
+.ip{
+    width: 220px;
+    margin:11px 30px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.btn{
+    height: 30px;
+    width: 100px;
+    margin: 30px 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
