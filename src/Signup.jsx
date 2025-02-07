@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from './navbar'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import toast,{Toaster} from 'react-hot-toast'
 import { useState } from 'react'
 import './Signup.css'
 const Signup = () => {
+  let navigate=useNavigate();
 
   let [formdata ,setformdata]=useState({
     fullname:"",
@@ -52,6 +53,8 @@ let submitdata=()=>{
       confirmpassword:""
   
     })
+    setTimeout(()=>{ navigate('/'),1500})
+   
   }
 };
 
