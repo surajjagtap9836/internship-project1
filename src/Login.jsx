@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import './Login.css'
+import Navbar from './navbar';
+import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+
 function Login() {
 let [fullname,setfullname]=useState("");
 let[password,setpassword]=useState("");
@@ -12,24 +16,35 @@ let[password,setpassword]=useState("");
     setpassword(event.target.value);
 
   }
-  let formsubmit =()=>{
-    if(fullname==""){
-      alert("Please Fill FullName");
+  let formsubmits =()=>{
+    if(fullname===""){
+     toast.error("Please Enter Your Name")
     }
-    else if(password==""){
-      alert("Password Cannot Be Empty")
+    else if(password===""){
+      toast.error("Password Cannot Be Empty!")
     }
+    else{
 
-    alert(`name:  ${fullname}     password:  ${password}`)
+    toast.success(`name:       ${fullname}  password:  ...`)
     setfullname("");
     setpassword("")
+    }
+    
+ 
+  }
+  let handlesubmit=(event)=>{
+    event.preventDefault();
+
   }
 
   return (
     <>
-   <h1 className='title'>Login Here</h1>
+    <Navbar/>
+      <Toaster/>
+      
+      <h1 className='title'>Login Here</h1>
     <div className='main-div'>
-
+        <form onSubmit={handlesubmit} >
          <div className='input-container'><br/>
          <input type='text'
           placeholder='Enter Your Name' 
@@ -46,11 +61,15 @@ let[password,setpassword]=useState("");
           required
 
           /><br/>
-         <button type='submit' className='btn' onClick={formsubmit}>Submit</button>
+         <Link to="./signup" > <p className='forgot'>Sign-up</p></Link>
+         <button type='submit' className='btn' onClick={formsubmits}>Login</button>
+        
          </div>
-
+         </form>
     </div>
+    
     </>
+    
   )
 }
 
