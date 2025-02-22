@@ -17,10 +17,10 @@ let[password,setpassword]=useState("");
 
   }
   let formsubmits =()=>{
-    if(fullname===""){
+    if(fullname.trim()){
      toast.error("Please Enter Your Name")
     }
-    else if(password===""){
+    else if(password.trim()){
       toast.error("Password Cannot Be Empty!")
     }
     else{
@@ -62,7 +62,7 @@ let[password,setpassword]=useState("");
 
           /><br/>
          <Link to="./signup" > <p className='forgot'>Sign-up</p></Link>
-         <button type='submit' className='btn' onClick={formsubmits}>Login</button>
+         <Link to="/"><button type='submit' className='btn' onClick={formsubmits}>Login</button></Link>
         
          </div>
          </form>

@@ -5,6 +5,8 @@ import About from './About'
 import Contact from './Contact'
 import Login from './login'
 import Signup from './Signup'
+import Error from './Error'
+
 function App() {
  
 
@@ -18,6 +20,7 @@ function App() {
       <Route  path='/contact' element={<Contact/>}   />
       <Route  path='/login' element={<Login/>}/>
       <Route  path='login/signup' element={<Signup/>}/>
+      <Route path='*' element={<Error/>} />
    </Routes>
   </BrowserRouter>
 

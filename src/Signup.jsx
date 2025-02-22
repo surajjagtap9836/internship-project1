@@ -53,8 +53,8 @@ let submitdata=()=>{
       confirmpassword:""
   
     })
-    setTimeout(()=>{ navigate('/'),1500})
-   
+    //setTimeout(()=>{ navigate('/'),1500})
+   navigate('/')
   }
 };
 
